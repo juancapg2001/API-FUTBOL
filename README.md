@@ -1,54 +1,39 @@
-🏅 PLAYER CARD
+PLAYER CARD
 La enciclopedia visual definitiva del deporte
-Este proyecto es una aplicación web moderna diseñada para entusiastas del deporte. Permite buscar cualquier jugador del mundo y visualizar una ficha técnica interactiva que adapta su diseño visual según el protagonista.
 
-🚀 Características Principales
-🎨 Dynamic Theming (Color Automático)
-La interfaz no es estática. Gracias a la Canvas API, el sistema analiza la fotografía del jugador en tiempo real, extrae el color dominante y reconfigura las variables de CSS (--player-accent). Esto hace que los botones, anillos y detalles cambien para combinar con el equipo o uniforme del jugador.
+Este proyecto es una aplicación web moderna diseñada para entusiastas del deporte que permite buscar cualquier jugador del mundo y visualizar una ficha técnica interactiva que adapta su diseño visual según el protagonista
 
-🌍 Biografía Inteligente ES/EN
-El sistema de datos prioriza el contenido en español (strDescriptionES). Si la traducción no existe en la API, conmuta automáticamente a la versión en inglés (strDescriptionEN), indicando siempre al usuario el idioma que está leyendo.
+Características Principales
+Dynamic Theming o Color Automático
+La interfaz no es estática gracias a la Canvas API el sistema analiza la fotografía del jugador en tiempo real extrae el color dominante y reconfigura las variables de CSS esto hace que los botones anillos y detalles cambien para combinar con el equipo o uniforme del jugador
 
-🏆 Gestión Completa de Datos
-Hero Section: Nombre, deporte, edad, nacionalidad y posición.
+Biografía Inteligente ES EN
+El sistema de datos prioriza el contenido en español si la traducción no existe en la API conmuta automáticamente a la versión en inglés indicando siempre al usuario el idioma que está leyendo
 
-Bio: Datos técnicos como altura, peso, lugar de nacimiento y dorsal.
+Gestión Completa de Datos
+Hero Section con nombre deporte edad nacionalidad y posición
+Bio con datos técnicos como altura peso lugar de nacimiento y dorsal
+Trofeos con el listado de honores ganados agrupados por importancia
+Historial con una línea de tiempo visual con todos los clubes anteriores del deportista
 
-Trofeos: Listado de honores ganados agrupados por importancia.
+Tecnologías Utilizadas
+HTML5 para la estructura semántica
+CSS3 para el neobrutalismo suave animaciones y diseño responsivo
+JavaScript ES6 para el consumo de API REST promesas y procesamiento de imágenes
+API de TheSportsDB v1
 
-Historial: Línea de tiempo visual (Timeline) con todos los clubes anteriores del deportista.
+Estructura del Código
+El proyecto se divide en tres pilares fundamentales
 
-🛠️ Tecnologías Utilizadas
-HTML5: Estructura semántica.
+index html que contiene el buscador y las secciones de la ficha organizadas por pestañas
+style css que define la identidad visual incluyendo el fondo animado con orbes y las animaciones de entrada
+app js que gestiona los flujos de datos de búsqueda de jugador consulta de honores e historial de equipos
 
-CSS3: Neobrutalismo suave, animaciones cubic-bezier y diseño responsivo.
+Instalación
+Clona este repositorio o descarga los archivos
+Abre el archivo index html en tu navegador
+Es recomendable usar un servidor local como Live Server en VS Code para evitar posibles bloqueos de CORS al leer los colores de las imágenes externas
 
-JavaScript (ES6+): Consumo de API REST, promesas y procesamiento de imágenes.
-
-API: TheSportsDB (v1).
-
-📸 Estructura del Código
-El proyecto se divide en tres pilares fundamentales:
-
-index.html: Contiene el buscador y las secciones de la ficha (Bio, Trofeos, Historial) organizadas por pestañas.
-
-style.css: Define la identidad visual, incluyendo el fondo animado con orbes y las animaciones de entrada (popIn).
-
-app.js: Gestiona los 3 flujos de datos:
-
-Búsqueda de jugador (searchplayers.php).
-
-Consulta de honores (lookuphonours.php).
-
-Historial de equipos (lookupformerteams.php).
-
-📥 Instalación
-Clona este repositorio o descarga los archivos.
-
-Abre el archivo index.html en tu navegador.
-
-Nota: Debido a que el sistema de color dinámico lee datos de píxeles de una imagen externa, es recomendable usar un servidor local (como Live Server en VS Code) para evitar posibles bloqueos de CORS en algunos navegadores.
-
-👨‍💻 Autor
-[Juan Carlos Pavón Godoy]
-Desarrollador Web & Fanático del Deporte
+Autor
+Juan Carlos Pavón Godoy
+Desarrollador Web y Fanático del Deporte
