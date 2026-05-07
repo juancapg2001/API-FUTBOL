@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Player Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Fondo animado -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- BUSCADOR -->
+  <div class="search-wrapper" id="searchWrapper">
+    <div class="search-card">
+      <div class="search-brand">
+        <span class="brand-icon">🏅</span>
+        <span class="brand-name">PLAYER<span class="dot">.</span>CARD</span>
+      </div>
+      <p class="search-hint">Busca cualquier jugador del mundo</p>
+      <div class="search-row">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Ej: Messi, Mbappé, Yamal..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="searchBtn" aria-label="Buscar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </div>
+      <div id="suggestions" class="suggestions hidden"></div>
+      <div id="searchStatus" class="search-status hidden"></div>
+    </div>
+  </div>
+
+  <!-- FICHA DEL JUGADOR -->
+  <div class="player-page hidden" id="playerPage">
+
+    <button class="back-btn" id="backBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Nueva búsqueda
+    </button>
+
+    <!-- HERO -->
+    <section class="hero" id="heroSection">
+      <div class="hero-bg-text" id="heroBgText"></div>
+
+      <div class="hero-img-wrap">
+        <div class="hero-img-ring"></div>
+        <img id="playerImg" class="hero-img" src="" alt=""/>
+        <div class="hero-img-fallback hidden" id="playerImgFallback">👤</div>
+      </div>
+
+      <div class="hero-info">
+        <div class="hero-sport" id="heroSport"></div>
+        <h1 class="hero-name" id="heroName"></h1>
+        <div class="hero-meta" id="heroMeta"></div>
+        <div class="hero-tags" id="heroTags"></div>
+      </div>
+    </section>
+
+    <!-- TABS -->
+    <div class="tabs-bar">
+      <button class="ptab active" data-tab="bio">📋 Bio</button>
+      <button class="ptab" data-tab="honours">🏆 Trofeos</button>
+      <button class="ptab" data-tab="teams">🔄 Historial</button>
+    </div>
+
+    <!-- TAB: BIO -->
+    <section class="tab-content active" id="tab-bio">
+      <div class="bio-grid" id="bioGrid"></div>
+      <div class="bio-desc" id="bioDesc"></div>
+    </section>
+
+    <!-- TAB: HONORES -->
+    <section class="tab-content" id="tab-honours">
+      <div id="honoursContent"></div>
+    </section>
+
+    <!-- TAB: HISTORIAL -->
+    <section class="tab-content" id="tab-teams">
+      <div id="teamsContent"></div>
+    </section>
+
+    <!-- Loading overlay para tabs -->
+    <div class="tab-loader hidden" id="tabLoader">
+      <div class="spinner"></div>
+      <span>Cargando datos...</span>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
