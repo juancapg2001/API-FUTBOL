@@ -1,4 +1,4 @@
-🏅 PLAYER CARD — THESPORTSDB
+🏅 PLAYER CARD
 ⚽ La enciclopedia visual definitiva del deporte
 Este proyecto es una aplicación web moderna diseñada para entusiastas del deporte que permite buscar cualquier jugador del mundo y visualizar una ficha técnica interactiva que adapta su diseño visual según el protagonista 🏃‍♂️
 
