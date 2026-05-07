@@ -36,5 +36,5 @@ El proyecto se divide en tres pilares fundamentales: 🏛️
 - Es recomendable usar un servidor local como Live Server en VS Code para evitar posibles bloqueos de CORS al leer los colores de las imágenes externas 💻
 
 ✍️ Autor
-Tu Nombre o Usuario
+Juan Carlos Pavón Godoy
 Desarrollador Web y Fanático del Deporte 🏎️ 🏀 ⚽
