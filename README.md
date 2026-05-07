@@ -1,5 +1,3 @@
-Aquí tienes el contenido del README.md en formato de texto estándar ("normal") para que solo tengas que copiar y pegar. He mantenido los iconos y la estructura limpia para que se vea profesional en GitHub o cualquier otro lector de Markdown.
-
 🏅 PLAYER CARD
 La enciclopedia visual definitiva del deporte
 Este proyecto es una aplicación web moderna diseñada para entusiastas del deporte. Permite buscar cualquier jugador del mundo y visualizar una ficha técnica interactiva que adapta su diseño visual según el protagonista.
