@@ -35,6 +35,6 @@ El proyecto se divide en tres pilares fundamentales: 🏛️
 - Abre el archivo index html en tu navegador 🌐
 - Es recomendable usar un servidor local como Live Server en VS Code para evitar posibles bloqueos de CORS al leer los colores de las imágenes externas 💻
 
-✍️ Autor
+✍️ Autor:
 Juan Carlos Pavón Godoy
-Desarrollador Web y Fanático del Deporte 🏎️ 🏀 ⚽
+(Desarrollador Web y Fanático del Deporte 🏎️ 🏀 ⚽)
