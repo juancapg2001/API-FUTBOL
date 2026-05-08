@@ -6,6 +6,91 @@
      2. lookuphonours  → trofeos ganados
      3. lookupformerteams → historial de equipos
    ===================================================== */
+/* ── FLOATING ICONS & BRAND DRIFT ── */
+const SPORTS_ICONS = [
+  '⚽','🏀','🎾','🏈','⚾','🏒','🏐','🥊','🏊','🚴',
+  '🏋️','🤸','🎿','🏇','🏄','🥋','⛳','🏸','🏓','🤺'
+];
+const BRAND_TEXTS = ['PLAYER.CARD','STATS','HONOURS','CAREER','BIO','TROPHIES','SQUAD','LEGEND','MVP','GOAT'];
+
+function initFloatingIcons() {
+  const canvas = document.getElementById('sportsCanvas');
+  const brandDiv = document.getElementById('brandDrift');
+
+  function spawnIcon() {
+    const el = document.createElement('div');
+    el.className = 'float-item';
+    el.textContent = SPORTS_ICONS[Math.floor(Math.random() * SPORTS_ICONS.length)];
+    const dur = 8 + Math.random() * 10;
+    const delay = Math.random() * -15;
+    el.style.cssText = `left:${Math.random()*95}%;bottom:-60px;font-size:${1.2+Math.random()*2}rem;--dur:${dur}s;--delay:${delay}s;--rot:${(Math.random()-.5)*40}deg;--rot2:${(Math.random()-.5)*60}deg`;
+    canvas.appendChild(el);
+    setTimeout(() => el.remove(), (dur + Math.abs(delay) + 2) * 1000);
+  }
+
+  function spawnWord() {
+    const el = document.createElement('div');
+    el.className = 'drift-word';
+    el.textContent = BRAND_TEXTS[Math.floor(Math.random() * BRAND_TEXTS.length)];
+    const dur = 14 + Math.random() * 12;
+    const delay = Math.random() * -20;
+    el.style.cssText = `top:${Math.random()*90}%;font-size:${0.8+Math.random()*0.9}rem;--ddur:${dur}s;--ddelay:${delay}s;--dy:${(Math.random()-.5)*60}px`;
+    brandDiv.appendChild(el);
+    setTimeout(() => el.remove(), (dur + Math.abs(delay) + 2) * 1000);
+  }
+
+  for (let i = 0; i < 25; i++) setTimeout(spawnIcon, i * 600);
+  setInterval(spawnIcon, 700);
+  for (let i = 0; i < 8; i++) setTimeout(spawnWord, i * 1800);
+  setInterval(spawnWord, 2000);
+}
+initFloatingIcons();
+
+/* ── SPORT ANIMATION ── */
+const SPORT_THEMES = {
+  Soccer:     { icons: ['⚽','🥅','🏟️','👟','🤸'], color: '#16a34a', name: 'FOOTBALL'    },
+  Basketball: { icons: ['🏀','🔥','⭐','💥','🎯'],  color: '#ea580c', name: 'BASKETBALL'  },
+  Tennis:     { icons: ['🎾','🏆','⚡','💫','🌟'],  color: '#ca8a04', name: 'TENNIS'      },
+  Baseball:   { icons: ['⚾','🏟️','⭐','💪','🎯'],  color: '#dc2626', name: 'BASEBALL'    },
+  Hockey:     { icons: ['🏒','🥅','❄️','⚡','💪'],  color: '#0284c7', name: 'HOCKEY'      },
+  default:    { icons: ['🏅','⭐','🔥','💥','✨'],  color: '#ff4d00', name: 'PLAYER'      },
+};
+
+function getSportTheme(sport) {
+  if (!sport) return SPORT_THEMES.default;
+  const s = sport.toLowerCase();
+  if (s.includes('soccer') || s.includes('football')) return SPORT_THEMES.Soccer;
+  if (s.includes('basketball')) return SPORT_THEMES.Basketball;
+  if (s.includes('tennis')) return SPORT_THEMES.Tennis;
+  if (s.includes('baseball')) return SPORT_THEMES.Baseball;
+  if (s.includes('hockey')) return SPORT_THEMES.Hockey;
+  return SPORT_THEMES.default;
+}
+
+function playSportAnimation(sportName, onDone) {
+  const overlay = document.getElementById('sportOverlay');
+  const ac = document.getElementById('sportAnimCanvas');
+  const ct = document.getElementById('sportCenterText');
+  const theme = getSportTheme(sportName);
+
+  ac.innerHTML = '';
+  ct.textContent = theme.name;
+  ct.style.color = theme.color;
+
+  for (let i = 0; i < 28; i++) {
+    const p = document.createElement('div');
+    p.className = 'sport-particle';
+    p.textContent = theme.icons[Math.floor(Math.random() * theme.icons.length)];
+    p.style.cssText = `left:${20+Math.random()*60}%;top:${30+Math.random()*40}%;font-size:${1.5+Math.random()*2.5}rem;animation-delay:${Math.random()*.4}s;--vx:${(Math.random()-.5)*300}px;--vy:${-(80+Math.random()*200)}px;--vx2:${(Math.random()-.5)*400}px;--vy2:${-(150+Math.random()*300)}px`;
+    ac.appendChild(p);
+  }
+
+  overlay.classList.add('active');
+  setTimeout(() => {
+    overlay.classList.remove('active');
+    setTimeout(() => { ac.innerHTML = ''; if (onDone) onDone(); }, 400);
+  }, 1800);
+}
 
 const API = 'https://www.thesportsdb.com/api/v1/json/123';
 
